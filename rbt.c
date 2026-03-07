@@ -51,3 +51,21 @@ void trocar_cor(ArvRB no)
     no->esq->cor = !no->esq->cor;
     no->dir->cor = !no->dir->cor; 
 }
+
+ArvRB rotacao_esq(ArvRB x)
+{
+    ArvRB y = x->dir;
+    x->dir = y->esq;
+    y->esq = x;
+    if (y->dir != NIL) y->dir->cor = BLACK;
+    return y;
+}
+ArvRB rotacao_dir(ArvRB x)
+{
+    ArvRB y = x->esq;
+    x->esq = y->dir;
+    y->dir = x;
+    y->cor = x->cor;
+    x->cor = RED;
+    return y;
+}
