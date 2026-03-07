@@ -37,3 +37,17 @@ int busca_ArvRB (ArvRB *raiz,int valor)
     if ((*raiz)->info < valor) return busca_ArvRB(&(*raiz)->esq,valor);
     return busca_ArvRB(&(*raiz)->dir,valor);
 }
+
+void colocar_cor(ArvRB no,int cor)
+{
+    if (no == NULL) return;
+    no->cor = cor;
+}
+
+void trocar_cor(ArvRB no)
+{
+    if (no == NULL) return;
+    no->cor = !no->cor;
+    no->esq->cor = !no->esq->cor;
+    no->dir->cor = !no->dir->cor; 
+}
