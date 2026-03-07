@@ -33,7 +33,7 @@ int busca_ArvRB (ArvRB *raiz,int valor);
 
 void colocar_cor (ArvRB no,int cor);
 void trocar_cor (ArvRB no);
-void rotacao_esq (ArvRB *raiz, ArvRB no);
-void rotacao_dir (ArvRB *raiz, ArvRB no);
+ArvRB rotacao_esq (ArvRB *raiz, ArvRB no);
+ArvRB rotacao_dir (ArvRB *raiz, ArvRB no);
 
 #endif
